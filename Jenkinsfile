@@ -4,14 +4,14 @@ pipeline {
   stages {
     stage('Say Hello') {
        steps {
-         sh 'ant -f test.xml -v'
+         sh 'ant -f build.xml -v'
        }
     }
   }
   
   post {
     always {
-      archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
+      archive 'dist/*.jar'
     }
   }
 }
