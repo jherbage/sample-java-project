@@ -3,7 +3,9 @@ pipeline {
 
   stages {
     stage('Say Hello') {
-       sh 'ant -f test.xml -v'
+       steps {
+         sh 'ant -f test.xml -v'
+       }
     }
   }
 }
